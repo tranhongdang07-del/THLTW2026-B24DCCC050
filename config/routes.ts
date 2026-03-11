@@ -1,4 +1,4 @@
-﻿﻿export default [
+﻿export default [
 	{
 		path: '/user',
 		layout: false,
@@ -43,19 +43,25 @@
 		component: './TodoList',
 	},
 
-	// DANH MUC HE THONG
-	// {
-	// 	name: 'DanhMuc',
-	// 	path: '/danh-muc',
-	// 	icon: 'copy',
-	// 	routes: [
-	// 		{
-	// 			name: 'ChucVu',
-	// 			path: 'chuc-vu',
-	// 			component: './DanhMuc/ChucVu',
-	// 		},
-	// 	],
-	// },
+	///////////////////////////////////
+	// BÀI THỰC HÀNH 02
+	{
+		name: 'TH02',
+		path: '/th02',
+		icon: 'AppstoreOutlined',
+		routes: [
+			{
+				name: 'Bài 1',
+				path: 'bai1',
+				component: './TH02/Bai1',
+			},
+			{
+				name: 'Bài 2',
+				path: 'bai2',
+				component: './TH02/Bai2',
+			},
+		],
+	},
 
 	{
 		path: '/notification',
