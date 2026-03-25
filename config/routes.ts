@@ -1,26 +1,121 @@
 ﻿export default [
-	{ path: '/', redirect: '/th03/nhan-vien' },
-
 	{
-		path: '/th03/nhan-vien',
-		name: 'Nhân viên',
-		component: './TH03/NhanVien',
-	},
-	{
-		path: '/th03/dich-vu',
-		name: 'Dịch vụ',
-		component: './TH03/DichVu',
-	},
-	{
-		path: '/th03/lich-hen',
-		name: 'Lịch hẹn',
-		component: './TH03/LichHen',
-	},
-	{
-		path: '/th03/thong-ke',
-		name: 'Thống kê',
-		component: './TH03/ThongKe',
+		path: '/user',
+		layout: false,
+		routes: [
+			{
+				path: '/user/login',
+				layout: false,
+				name: 'login',
+				component: './user/Login',
+			},
+			{
+				path: '/user',
+				redirect: '/user/login',
+			},
+		],
 	},
 
-	{ component: './exception/404' },
+	///////////////////////////////////
+	// DEFAULT MENU
+	{
+		path: '/dashboard',
+		name: 'Dashboard',
+		component: './TrangChu',
+		icon: 'HomeOutlined',
+	},
+	{
+		path: '/gioi-thieu',
+		name: 'About',
+		component: './TienIch/GioiThieu',
+		hideInMenu: true,
+	},
+	{
+		path: '/random-user',
+		name: 'RandomUser',
+		component: './RandomUser',
+		icon: 'ArrowsAltOutlined',
+	},
+	{
+		path: '/todo-list',
+		name: 'TodoList',
+		icon: 'OrderedListOutlined',
+		component: './TodoList',
+	},
+
+	///////////////////////////////////
+	// ✅ TH04 - THÊM Ở ĐÂY
+	{
+		path: '/th04',
+		name: 'TH04',
+		icon: 'FileTextOutlined',
+		routes: [
+			{
+				path: '/th04/book',
+				name: 'Sổ văn bằng',
+				component: './TH04/Book',
+			},
+			{
+				path: '/th04/decision',
+				name: 'Quyết định',
+				component: './TH04/Decision',
+			},
+			{
+				path: '/th04/field',
+				name: 'Cấu hình field',
+				component: './TH04/FieldConfig',
+			},
+			{
+				path: '/th04/certificate',
+				name: 'Văn bằng',
+				component: './TH04/Certificate',
+			},
+			{
+				path: '/th04/search',
+				name: 'Tra cứu',
+				component: './TH04/Search',
+			},
+		],
+	},
+
+	///////////////////////////////////
+
+	{
+		path: '/notification',
+		routes: [
+			{
+				path: './subscribe',
+				exact: true,
+				component: './ThongBao/Subscribe',
+			},
+			{
+				path: './check',
+				exact: true,
+				component: './ThongBao/Check',
+			},
+			{
+				path: './',
+				exact: true,
+				component: './ThongBao/NotifOneSignal',
+			},
+		],
+		layout: false,
+		hideInMenu: true,
+	},
+	{
+		path: '/',
+	},
+	{
+		path: '/403',
+		component: './exception/403/403Page',
+		layout: false,
+	},
+	{
+		path: '/hold-on',
+		component: './exception/DangCapNhat',
+		layout: false,
+	},
+	{
+		component: './exception/404',
+	},
 ];
