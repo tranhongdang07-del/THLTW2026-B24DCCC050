@@ -43,8 +43,10 @@
 		component: './TodoList',
 	},
 
+
+
 	///////////////////////////////////
-	// ✅ TH04 - THÊM Ở ĐÂY
+	// TH04
 	{
 		path: '/th04',
 		name: 'TH04',
@@ -74,6 +76,36 @@
 				path: '/th04/search',
 				name: 'Tra cứu',
 				component: './TH04/Search',
+			},
+		],
+	},
+
+	///////////////////////////////////
+	// TH05
+	{
+		path: '/th05',
+		name: 'TH05',
+		icon: 'TeamOutlined',
+		routes: [
+			{
+				path: '/th05/clubs',
+				name: 'Câu lạc bộ',
+				component: './TH05/Clubs',
+			},
+			{
+				path: '/th05/applications',
+				name: 'Đơn đăng ký',
+				component: './TH05/Applications',
+			},
+			{
+				path: '/th05/members',
+				name: 'Thành viên',
+				component: './TH05/Members',
+			},
+			{
+				path: '/th05/report',
+				name: 'Báo cáo',
+				component: './TH05/Report',
 			},
 		],
 	},
