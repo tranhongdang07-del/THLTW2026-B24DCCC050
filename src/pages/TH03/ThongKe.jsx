@@ -90,12 +90,12 @@ const ThongKe = () => {
 			title: 'Điểm',
 			dataIndex: 'avgRating',
 			key: 'avgRating',
-			render: (rating) => (
+			render: (rating, record) => (
 				<span>
 					{Array(Math.round(rating))
 						.fill(0)
 						.map((_, i) => (
-							<span key={i}>⭐</span>
+							<span key={`star-${record.key}-${i}`}>⭐</span>
 						))}{' '}
 					({rating}/5)
 				</span>

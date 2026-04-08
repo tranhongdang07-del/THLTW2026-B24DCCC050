@@ -1,30 +1,30 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   ProTable,
   ModalForm,
   ProFormText,
   ProFormDatePicker,
   ProFormSwitch
-} from "@ant-design/pro-components";
-import { Button, message } from "antd";
-import { clubs } from "../data";
+} from '@ant-design/pro-components';
+import { Button, message } from 'antd';
+import { clubs } from '../data';
 
 export default () => {
 
   const [data,setData] = useState([...clubs]);
 
   const columns = [
-    { title:"Tên CLB", dataIndex:"name" },
-    { title:"Ngày thành lập", dataIndex:"date" },
-    { title:"Chủ nhiệm", dataIndex:"leader" },
+    { title:'Tên CLB', dataIndex:'name' },
+    { title:'Ngày thành lập', dataIndex:'date' },
+    { title:'Chủ nhiệm', dataIndex:'leader' },
     {
-      title:"Hoạt động",
-      dataIndex:"active",
-      render:v=>v?"Có":"Không"
+      title:'Hoạt động',
+      dataIndex:'active',
+      render:v=>v?'Có':'Không'
     },
     {
-      title:"Action",
-      valueType:"option",
+      title:'Action',
+      valueType:'option',
       render:(t,r)=>[
         <a
           onClick={()=>{
@@ -54,7 +54,7 @@ export default () => {
             };
             clubs.push(newClub);
             setData([...clubs]);
-            message.success("Thêm thành công");
+            message.success('Thêm thành công');
             return true;
           }}
         >

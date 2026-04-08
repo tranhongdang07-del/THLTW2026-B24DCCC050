@@ -1,19 +1,19 @@
-import { Card, Statistic, Row, Col, Table } from "antd";
-import { clubs, applications } from "../data";
+import { Card, Statistic, Row, Col, Table } from 'antd';
+import { clubs, applications } from '../data';
 
 export default () => {
 
   const totalClubs = clubs.length;
 
-  const pending = applications.filter(i => i.status === "Pending").length;
-  const approved = applications.filter(i => i.status === "Approved").length;
-  const rejected = applications.filter(i => i.status === "Rejected").length;
+  const pending = applications.filter(i => i.status === 'Pending').length;
+  const approved = applications.filter(i => i.status === 'Approved').length;
+  const rejected = applications.filter(i => i.status === 'Rejected').length;
 
   const data = clubs.map((c, index) => {
 
-    const p = applications.filter(a => a.club === c.name && a.status === "Pending").length;
-    const a = applications.filter(a => a.club === c.name && a.status === "Approved").length;
-    const r = applications.filter(a => a.club === c.name && a.status === "Rejected").length;
+    const p = applications.filter(a => a.club === c.name && a.status === 'Pending').length;
+    const a = applications.filter(a => a.club === c.name && a.status === 'Approved').length;
+    const r = applications.filter(a => a.club === c.name && a.status === 'Rejected').length;
 
     return {
       key: index,
@@ -26,20 +26,20 @@ export default () => {
 
   const columns = [
     {
-      title: "Câu lạc bộ",
-      dataIndex: "club"
+      title: 'Câu lạc bộ',
+      dataIndex: 'club'
     },
     {
-      title: "Pending",
-      dataIndex: "pending"
+      title: 'Pending',
+      dataIndex: 'pending'
     },
     {
-      title: "Approved",
-      dataIndex: "approved"
+      title: 'Approved',
+      dataIndex: 'approved'
     },
     {
-      title: "Rejected",
-      dataIndex: "rejected"
+      title: 'Rejected',
+      dataIndex: 'rejected'
     }
   ];
 

@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   ProTable,
   ModalForm,
   ProFormText,
   ProFormSelect
-} from "@ant-design/pro-components";
-import { Button } from "antd";
-import { applications, clubs } from "../data";
+} from '@ant-design/pro-components';
+import { Button } from 'antd';
+import { applications, clubs } from '../data';
 
 export default () => {
 
@@ -15,7 +15,7 @@ export default () => {
 
   const approve = () => {
     const newData=data.map(i=>{
-      if(selected.includes(i.id)) i.status="Approved";
+      if(selected.includes(i.id)) i.status='Approved';
       return i;
     });
     setData([...newData]);
@@ -23,18 +23,18 @@ export default () => {
 
   const reject = () => {
     const newData=data.map(i=>{
-      if(selected.includes(i.id)) i.status="Rejected";
+      if(selected.includes(i.id)) i.status='Rejected';
       return i;
     });
     setData([...newData]);
   };
 
   const columns=[
-    {title:"Họ tên",dataIndex:"name"},
-    {title:"Email",dataIndex:"email"},
-    {title:"SĐT",dataIndex:"phone"},
-    {title:"CLB",dataIndex:"club"},
-    {title:"Trạng thái",dataIndex:"status"}
+    {title:'Họ tên',dataIndex:'name'},
+    {title:'Email',dataIndex:'email'},
+    {title:'SĐT',dataIndex:'phone'},
+    {title:'CLB',dataIndex:'club'},
+    {title:'Trạng thái',dataIndex:'status'}
   ];
 
   return (
@@ -58,7 +58,7 @@ export default () => {
           onFinish={async(values)=>{
             const newItem={
               id:Date.now(),
-              status:"Pending",
+              status:'Pending',
               ...values
             };
             applications.push(newItem);

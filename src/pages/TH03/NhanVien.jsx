@@ -63,7 +63,7 @@ const NhanVien = () => {
 				{Array(Math.round(avg))
 					.fill(0)
 					.map((_, i) => (
-						<span key={i}>⭐</span>
+						<span key={`star-${record.key}-${i}`}>⭐</span>
 					))}{' '}
 				({avg}/5)
 			</span>

@@ -104,7 +104,7 @@ const DanhGia = () => {
 					{Array(r)
 						.fill(0)
 						.map((_, i) => (
-							<span key={i}>⭐</span>
+							<span key={`star-${record.key}-${i}`}>⭐</span>
 						))}{' '}
 					({r}/5)
 				</span>

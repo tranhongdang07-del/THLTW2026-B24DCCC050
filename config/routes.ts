@@ -42,70 +42,35 @@
 		icon: 'OrderedListOutlined',
 		component: './TodoList',
 	},
-
-
-
-	///////////////////////////////////
-	// TH04
-	{
-		path: '/th04',
-		name: 'TH04',
-		icon: 'FileTextOutlined',
-		routes: [
-			{
-				path: '/th04/book',
-				name: 'Sổ văn bằng',
-				component: './TH04/Book',
-			},
-			{
-				path: '/th04/decision',
-				name: 'Quyết định',
-				component: './TH04/Decision',
-			},
-			{
-				path: '/th04/field',
-				name: 'Cấu hình field',
-				component: './TH04/FieldConfig',
-			},
-			{
-				path: '/th04/certificate',
-				name: 'Văn bằng',
-				component: './TH04/Certificate',
-			},
-			{
-				path: '/th04/search',
-				name: 'Tra cứu',
-				component: './TH04/Search',
-			},
-		],
-	},
+	
 
 	///////////////////////////////////
-	// TH05
+	// TH06 TRAVEL PLANNER
+
 	{
-		path: '/th05',
-		name: 'TH05',
-		icon: 'TeamOutlined',
+		name: 'TH06 Travel Planner',
+		path: '/th06',
+		icon: 'GlobalOutlined',
 		routes: [
 			{
-				path: '/th05/clubs',
-				name: 'Câu lạc bộ',
-				component: './TH05/Clubs',
+				name: 'Khám phá điểm đến',
+				path: 'applications',
+				component: './TH06/Applications',
 			},
 			{
-				path: '/th05/applications',
-				name: 'Đơn đăng ký',
-				component: './TH05/Applications',
+				name: 'Tạo lịch trình',
+				path: 'planner',
+				component: './TH06/Planner',
 			},
 			{
-				path: '/th05/members',
-				name: 'Thành viên',
-				component: './TH05/Members',
+				name: 'Quản lý ngân sách',
+				path: 'budget',
+				component: './TH06/Budget',
 			},
 			{
-				path: '/th05/report',
-				name: 'Báo cáo',
-				component: './TH05/Report',
+				name: 'Admin điểm đến',
+				path: 'admin',
+				component: './TH06/Admin',
 			},
 		],
 	},
@@ -134,9 +99,12 @@
 		layout: false,
 		hideInMenu: true,
 	},
+
 	{
 		path: '/',
+		redirect: '/dashboard',
 	},
+
 	{
 		path: '/403',
 		component: './exception/403/403Page',
