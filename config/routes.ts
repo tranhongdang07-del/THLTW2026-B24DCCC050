@@ -76,7 +76,18 @@
 	},
 
 	///////////////////////////////////
-
+{
+	name: 'KTGK - Quản lý phòng học',
+	path: '/ktgk',
+	icon: 'TableOutlined',
+	routes: [
+		{
+			name: 'Danh sách phòng học',
+			path: 'classroom',
+			component: './KTGK/ClassRoom',
+		},
+	],
+},
 	{
 		path: '/notification',
 		routes: [
