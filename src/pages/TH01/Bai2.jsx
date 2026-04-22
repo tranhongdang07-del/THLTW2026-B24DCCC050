@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
   Card,
   Input,
@@ -9,35 +9,35 @@ import {
   InputNumber,
   Progress,
   Select,
-} from "antd";
-import dayjs from "dayjs";
+} from 'antd';
+import dayjs from 'dayjs';
 
 export default function Bai2() {
   const [subjects, setSubjects] = useState(
-    JSON.parse(localStorage.getItem("subjects")) || []
+    JSON.parse(localStorage.getItem('subjects')) || []
   );
 
   const [monthlyTarget, setMonthlyTarget] = useState(
-    Number(localStorage.getItem("monthlyTarget")) || 0
+    Number(localStorage.getItem('monthlyTarget')) || 0
   );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState(null);
 
   const [form, setForm] = useState({
-    name: "",
+    name: '',
     date: null,
     duration: 0,
-    content: "",
-    note: "",
+    content: '',
+    note: '',
   });
 
   useEffect(() => {
-    localStorage.setItem("subjects", JSON.stringify(subjects));
+    localStorage.setItem('subjects', JSON.stringify(subjects));
   }, [subjects]);
 
   useEffect(() => {
-    localStorage.setItem("monthlyTarget", monthlyTarget);
+    localStorage.setItem('monthlyTarget', monthlyTarget);
   }, [monthlyTarget]);
 
   const openModal = (record = null) => {
@@ -71,11 +71,11 @@ export default function Bai2() {
 
     setIsModalOpen(false);
     setForm({
-      name: "",
+      name: '',
       date: null,
       duration: 0,
-      content: "",
-      note: "",
+      content: '',
+      note: '',
     });
   };
 
@@ -92,17 +92,17 @@ export default function Bai2() {
     monthlyTarget > 0 ? Math.min((totalDuration / monthlyTarget) * 100, 100) : 0;
 
   const columns = [
-    { title: "Môn", dataIndex: "name" },
+    { title: 'Môn', dataIndex: 'name' },
     {
-      title: "Ngày",
-      dataIndex: "date",
-      render: (date) => dayjs(date).format("DD/MM/YYYY HH:mm"),
+      title: 'Ngày',
+      dataIndex: 'date',
+      render: (date) => dayjs(date).format('DD/MM/YYYY HH:mm'),
     },
-    { title: "Thời lượng (giờ)", dataIndex: "duration" },
-    { title: "Nội dung", dataIndex: "content" },
-    { title: "Ghi chú", dataIndex: "note" },
+    { title: 'Thời lượng (giờ)', dataIndex: 'duration' },
+    { title: 'Nội dung', dataIndex: 'content' },
+    { title: 'Ghi chú', dataIndex: 'note' },
     {
-      title: "Hành động",
+      title: 'Hành động',
       render: (_, record) => (
         <>
           <Button onClick={() => openModal(record)} style={{ marginRight: 5 }}>
@@ -148,7 +148,7 @@ export default function Bai2() {
       >
         <Select
           placeholder="Chọn môn"
-          style={{ width: "100%", marginBottom: 10 }}
+          style={{ width: '100%', marginBottom: 10 }}
           value={form.name}
           onChange={(value) => setForm({ ...form, name: value })}
         >
@@ -161,14 +161,14 @@ export default function Bai2() {
 
         <DatePicker
           showTime
-          style={{ width: "100%", marginBottom: 10 }}
+          style={{ width: '100%', marginBottom: 10 }}
           value={form.date}
           onChange={(value) => setForm({ ...form, date: value })}
         />
 
         <InputNumber
           placeholder="Thời lượng (giờ)"
-          style={{ width: "100%", marginBottom: 10 }}
+          style={{ width: '100%', marginBottom: 10 }}
           value={form.duration}
           onChange={(value) => setForm({ ...form, duration: value })}
         />

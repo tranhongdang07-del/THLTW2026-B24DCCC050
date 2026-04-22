@@ -28,7 +28,7 @@ const TodoList: React.FC = () => {
 			<Row gutter={[10, 10]} style={{ marginTop: 20 }}>
 				{data?.map((item, index) => {
 					return (
-						<Col md={8} xxl={6} key={index}>
+						<Col md={8} xxl={6} key={item.content || index}>
 							<TodoItem record={item} index={index} />
 						</Col>
 					);
