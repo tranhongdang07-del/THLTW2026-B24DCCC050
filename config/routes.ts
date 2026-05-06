@@ -42,42 +42,32 @@
 		icon: 'OrderedListOutlined',
 		component: './TodoList',
 	},
+	
 
-	///////////////////////////////////
-	// BÀI THỰC HÀNH 02
+	// ===== THÊM TH09 Ở ĐÂY =====
 	{
-		name: 'TH02',
-		path: '/th02',
+		path: '/th09',
+		name: 'TH09 - Kanban',
 		icon: 'AppstoreOutlined',
-		routes: [
-			{
-				name: 'Bài 1',
-				path: 'bai1',
-				component: './TH02/Bai1',
-			},
-			{
-				name: 'Bài 2',
-				path: 'bai2',
-				component: './TH02/Bai2',
-			},
-		],
+		component: './TH09',
 	},
 
+	// NOTIFICATION (FIX PATH)
 	{
 		path: '/notification',
 		routes: [
 			{
-				path: './subscribe',
+				path: '/notification/subscribe',
 				exact: true,
 				component: './ThongBao/Subscribe',
 			},
 			{
-				path: './check',
+				path: '/notification/check',
 				exact: true,
 				component: './ThongBao/Check',
 			},
 			{
-				path: './',
+				path: '/notification',
 				exact: true,
 				component: './ThongBao/NotifOneSignal',
 			},
@@ -85,9 +75,12 @@
 		layout: false,
 		hideInMenu: true,
 	},
+
 	{
 		path: '/',
+		redirect: '/dashboard',
 	},
+
 	{
 		path: '/403',
 		component: './exception/403/403Page',
